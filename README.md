@@ -66,14 +66,14 @@ Script detects when new export is finished and uploads on Blob storage.
 
 - Run:
 
-  <code>
-    chmod +x /root/deploy-to-azs.sh
+<code>
+chmod +x /root/deploy-to-azs.sh
 
-    systemctl daemon-reload
+systemctl daemon-reload
 
-    systemctl start deployer
+systemctl start deployer
 
-    systemctl enable deployer
+systemctl enable deployer
   </code>
 
 ---
