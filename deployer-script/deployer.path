@@ -1,0 +1,6 @@
+[Path]
+PathChanged=/var/www/html/wp-content/uploads/deploy.txt
+
+[Unit]
+Wants=deployer.service
+

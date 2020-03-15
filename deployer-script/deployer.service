@@ -1,0 +1,10 @@
+[Unit]
+Description=Static WP deployer to Azure Storage
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/root/deploy-to-azs.sh
+
+[Install]
+WantedBy=multi-user.target
