@@ -3,7 +3,7 @@
 ## Architecture
 Idea is based on publishing static HTML exports outside VM - visitors don't interact with our WP, but with files in Azure CDN.
 
-VM with LAMP installation is isolated and accessible via VPN (or at least protected by IP filter) for redactors only. WP is configured for another URL (e.g. mysite-administration.acme.company). Thanks to this setup, redactors are able to preview their work before publishing.
+VM with LAMP installation is isolated and accessible via VPN (or at least protected by IP filter) for redactors only. WP is configured for another URL (e.g. <em>mysite-administration.acme.company</em>). Thanks to this setup, redactors are able to preview their work before publishing.
 
 When is redactor satisfied with all articles, triggers WP2Static plugin to generate static HTML files to special folder located on VM file system.
 
@@ -66,15 +66,12 @@ Script detects when new export is finished and uploads on Blob storage.
 
 - Run:
 
-<code>
-chmod +x /root/deploy-to-azs.sh
-
-systemctl daemon-reload
-
-systemctl start deployer
-
-systemctl enable deployer
-</code>
+  ```bash
+  $ chmod +x /root/deploy-to-azs.sh
+  $ systemctl daemon-reload
+  $ systemctl start deployer
+  $ systemctl enable deployer
+  ```
 
 ---
 
