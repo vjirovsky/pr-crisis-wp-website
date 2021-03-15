@@ -15,7 +15,15 @@ When are output files checked that everything is ok, redactor is able trigger in
 
 ![Flush Azure CDN cache button in WordPress](images/flush-button.png)
 
+### Deployment over Bicep <em>(experimental)</em>
+You can use [Azure Bicep]([https://github.com/Azure/bicep]) for deployment some of required resources by file `main.bicep`. This file contains definition for Azure Storage, CDN incl. Endpoint and KeyVault.
 
+```bash
+az deployment group create -f ./main.bicep -g <rg-name> --parameters cdnUrlBeforeDotAzureEdgeDotNet=mycdnUrl
+```
+
+- parameter `cdnUrlBeforeDotAzureEdgeDotNet` is unique URL of CDN, which will be used for CNAME DNS record
+- after deployment you need to switch feature <em>Static website</em> to <em>On</em> manually on Storage Account
 
 ## Recommended Azure configuration
 
